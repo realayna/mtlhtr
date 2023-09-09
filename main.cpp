@@ -9,7 +9,7 @@ void refreshForecast(std::map<std::string, int> forecastmap)
 {
     while (true)
     {
-        for (auto item : forecastmap)
+        for (auto& item : forecastmap)
         {
             item.second++;
             std::cout << item.first << " - " << item.second << std::endl;
@@ -28,5 +28,5 @@ int main()
     
     std::thread bgworker(refreshForecast, forecastmap);
     bgworker.join();
-    
+
 }
