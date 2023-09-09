@@ -25,4 +25,8 @@ int main()
         {"New York", 15},
         {"Mumbai", 20},
         {"Berlin", 18}};
+    
+    std::thread bgworker(refreshForecast, forecastmap);
+    bgworker.join();
+    
 }
